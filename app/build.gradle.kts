@@ -14,6 +14,12 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
+
+        ndk {
+            // Personal sideload tool for modern arm64 phones only — cuts the
+            // FFmpeg-bundled APK from ~190MB (4 ABIs) down to roughly a quarter.
+            abiFilters += "arm64-v8a"
+        }
     }
 
     buildTypes {
